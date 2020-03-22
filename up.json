@@ -1,0 +1,26 @@
+{
+  "name": "covid-19-cases",
+  "profile": "default",
+  "regions": [
+    "sa-east-1"
+  ],
+  "lambda": {
+    "runtime": "nodejs12.x",
+    "memory": 256,
+      "policy": [
+        {
+          "Effect": "Allow",
+          "Resource": "*",
+          "Action": [
+            "dynamodb:Get*",
+            "dynamodb:List*",
+            "dynamodb:Query"
+          ]
+        }
+      ]
+  },
+  "environment": {
+    "DATABASE_NAME" : "covid-19-staging"
+  }
+      
+}
